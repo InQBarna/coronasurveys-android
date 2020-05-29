@@ -8,78 +8,129 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="CoronaSurveys Project Summary"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/presentation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/presentation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/team_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Team"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/presentation" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/data_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            android:text="All collected data"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_button" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CoronaSurveys Project Summary"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:textSize="28sp"/>
+            android:text="About the project"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/data_button" />
 
         <TextView
             android:id="@+id/main_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:text="The CoronaSurveys project is a collaborative endeavour from several universities and research institutions (team members) Data about COVID-19 cases is collected via anonymous open surveys (all the data collected is openly available). The results below present estimations on the incidence and evolution of COVID-19 obtained from this data using the Network Scale-up Method. You can help by regularly completing the anonymous survey."
-            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_marginTop="4dp"
+            android:text="@string/explanation_project"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <TextView
             android:id="@+id/follow_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Follow Us!"
             android:layout_marginTop="40dp"
+            android:text="Follow Us!"
             android:textColor="@color/purple_500"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/main_text"
+            app:layout_constraintEnd_toEndOf="@id/can_follow_us"
             app:layout_constraintStart_toStartOf="@id/can_follow_us"
-            app:layout_constraintEnd_toEndOf="@id/can_follow_us"/>
+            app:layout_constraintTop_toBottomOf="@id/main_text" />
 
         <TextView
             android:id="@+id/can_follow_us"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:text="You can also follow us on social networks and share our work:"
-            app:layout_constraintTop_toBottomOf="@id/follow_us"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="24dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/follow_us" />
 
         <ImageView
             android:id="@+id/facebook"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/purple_200"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/can_follow_us"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/purple_200"
             app:layout_constraintEnd_toStartOf="@id/twitter"
-            app:layout_constraintHorizontal_chainStyle="packed" />
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/can_follow_us" />
 
         <ImageView
             android:id="@+id/twitter"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="24dp"
             android:background="@color/purple_500"
-            app:layout_constraintTop_toTopOf="@id/facebook"
-            app:layout_constraintStart_toEndOf="@id/facebook"
             app:layout_constraintEnd_toStartOf="@id/instagram"
-            android:layout_marginStart="24dp"/>
+            app:layout_constraintStart_toEndOf="@id/facebook"
+            app:layout_constraintTop_toTopOf="@id/facebook" />
 
         <ImageView
             android:id="@+id/instagram"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/purple_700"
             android:layout_marginStart="24dp"
+            android:background="@color/purple_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/twitter"
             app:layout_constraintTop_toTopOf="@id/facebook" />
@@ -87,13 +138,14 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Email us"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/main_color"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/facebook"
+            android:backgroundTint="@color/main_color"
+            android:text="Email us"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/can_follow_us"
             app:layout_constraintStart_toStartOf="@id/can_follow_us"
-            app:layout_constraintEnd_toEndOf="@id/can_follow_us"/>
+            app:layout_constraintTop_toBottomOf="@id/facebook" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

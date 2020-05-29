@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingVertical="16dp">
 
         <TextView
@@ -82,6 +82,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title" />
 
+        <WebView
+            android:id="@+id/plot"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/main_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"/>
+
         <TextView
             android:id="@+id/follow_us"
             android:layout_width="wrap_content"
@@ -92,7 +103,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/can_follow_us"
             app:layout_constraintStart_toStartOf="@id/can_follow_us"
-            app:layout_constraintTop_toBottomOf="@id/main_text" />
+            app:layout_constraintTop_toBottomOf="@id/plot" />
 
         <TextView
             android:id="@+id/can_follow_us"
@@ -136,13 +147,13 @@
             app:layout_constraintTop_toTopOf="@id/facebook" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/email_button"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/main_color"
             android:text="Email us"
             android:textAllCaps="false"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/can_follow_us"
             app:layout_constraintStart_toStartOf="@id/can_follow_us"
             app:layout_constraintTop_toBottomOf="@id/facebook" />

@@ -19,7 +19,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "SURVEY_URL", '"https://mobile.coronasurveys.org/?r=survey/index&sid=991378"'
+        }
         release {
+            buildConfigField "String", "SURVEY_URL", '"https://mobile.coronasurveys.org/xx/yy"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -31,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,6 +48,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.github.blongho:worldCountryData:1.5'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

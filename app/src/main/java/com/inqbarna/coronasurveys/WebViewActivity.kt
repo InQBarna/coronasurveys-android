@@ -1,11 +1,37 @@
 package com.inqbarna.coronasurveys
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.webkit.WebView
+import androidx.appcompat.app.AppCompatActivity
 
 class WebViewActivity : AppCompatActivity() {
+
+    private lateinit var myWebView: WebView
+
+    companion object {
+        fun getCallingIntent(ctx : Context) : Intent {
+            return Intent(ctx, WebViewActivity::class.java)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web_view)
+        myWebView = setupWebView()
+        setContentView(myWebView)
+        myWebView.loadUrl("https://survey.coronasurveys.org/?r=survey%2Findex&sid=10&newtest=Y&lang=ca&Country=AD")
     }
+
+    private fun setupWebView(): WebView {
+        return WebView(this).apply {
+            settings.javaScriptEnabled = true
+            settings.useWideViewPort = true
+            settings.loadWithOverviewMode = true
+            settings.javaScriptCanOpenWindowsAutomatically = true
+            settings.databaseEnabled = true
+            settings.domStorageEnabled = true
+        }
+    }
+
 }

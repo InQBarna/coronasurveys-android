@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.util.TypedValue
 import android.webkit.WebView
@@ -23,6 +24,12 @@ val ViewBinding.context: Context get() = root.context
 fun Int.toPx(context: Context): Int = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_DIP, this.toFloat(),
     context.resources.displayMetrics).toInt()
+
+fun Context.openUrl(url: String) {
+    val i = Intent(Intent.ACTION_VIEW)
+    i.data = Uri.parse(url)
+    startActivity(i)
+}
 
 fun createAlarm(context: Context, freq: ReminderFrequency) {
     val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager

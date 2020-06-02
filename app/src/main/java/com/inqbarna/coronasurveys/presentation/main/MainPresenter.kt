@@ -21,10 +21,14 @@ class MainPresenter (
         lifecycle.addObserver(binding.countryView)
         binding.plot.configure(PLOT_URL)
 
-        binding.teamButton.setOnClickListener { goToTeam() }
-        binding.dataButton.setOnClickListener { goToGithub() }
         binding.emailButton.setOnClickListener { startEmail() }
         binding.fillSurveyButton.setOnClickListener { goToSurvey() }
+
+        binding.teamButton.setOnClickListener { binding.context.openUrl(TEAM_URL) }
+        binding.dataButton.setOnClickListener { binding.context.openUrl(GITHUB) }
+        binding.facebook.setOnClickListener { binding.context.openUrl(FACEBOOK) }
+        binding.twitter.setOnClickListener { binding.context.openUrl(TWITTER) }
+        binding.instagram.setOnClickListener { binding.context.openUrl(INSTAGRAM) }
     }
 
     private fun startEmail() {
@@ -37,12 +41,6 @@ class MainPresenter (
         }
     }
 
-    private fun goToTeam() {
-        val i = Intent(Intent.ACTION_VIEW)
-        i.data = Uri.parse(TEAM_URL)
-        binding.context.startActivity(i)
-    }
-
     private fun goToSurvey() {
         val intent = WebViewActivity.getCallingIntent(binding.context)
         binding.context.startActivity(intent)
@@ -53,9 +51,4 @@ class MainPresenter (
         binding.context.startActivity(intent)
     }
 
-    private fun goToGithub() {
-        val i = Intent(Intent.ACTION_VIEW)
-        i.data = Uri.parse(GITHUB)
-        binding.context.startActivity(i)
-    }
 }

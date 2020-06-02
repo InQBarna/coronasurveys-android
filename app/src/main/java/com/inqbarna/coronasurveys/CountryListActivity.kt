@@ -21,14 +21,12 @@ class CountryListActivity : AppCompatActivity() {
     }
 
     private val adapter = BasicAdapter()
+    lateinit var presenter: CountryListPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityCountryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        RecyclerUtils.setAdapter(binding.contryListRecycler, adapter)
-        adapter.update(World.getAllCountries()
-            .sortedBy { it.name }
-            .map { CountryItem(it) })
+        presenter = CountryListPresenter(this, binding, adapter)
     }
 }

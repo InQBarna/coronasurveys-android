@@ -7,6 +7,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import com.inqbarna.coronasurveys.utils.SurveyUtils
+import com.inqbarna.coronasurveys.utils.configure
 import com.inqbarna.coronasurveys.utils.getCountry
 import com.inqbarna.coronasurveys.utils.getLanguage
 
@@ -30,15 +31,11 @@ class WebViewActivity : AppCompatActivity() {
 
     private fun setupWebView(): WebView {
         WebView.setWebContentsDebuggingEnabled(true)
-        return WebView(this).apply {
+        return WebView(this)
+            .configure()
+            .apply {
             webViewClient = CustomWebViewClient()
             addJavascriptInterface(JavaScriptInterface(), HANDLER)
-            settings.javaScriptEnabled = true
-            settings.useWideViewPort = true
-            settings.loadWithOverviewMode = true
-            settings.javaScriptCanOpenWindowsAutomatically = true
-            settings.databaseEnabled = true
-            settings.domStorageEnabled = true
         }
     }
 

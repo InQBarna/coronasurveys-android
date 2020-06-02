@@ -5,7 +5,8 @@ import com.inqbarna.coronasurveys.R
 import com.inqbarna.coronasurveys.databinding.CountryViewBinding
 import com.xwray.groupie.databinding.BindableItem
 
-class CountryItem (private val country: Country): BindableItem<CountryViewBinding>() {
+class CountryItem (private val country: Country, private val listener: OnCLickListener)
+    : BindableItem<CountryViewBinding>() {
 
     override fun getId(): Long {
         return country.id.toLong()
@@ -16,5 +17,10 @@ class CountryItem (private val country: Country): BindableItem<CountryViewBindin
     override fun bind(viewBinding: CountryViewBinding, position: Int) {
         viewBinding.countryFlag.setImageResource(country.flagResource)
         viewBinding.countryName.text = country.name
+        viewBinding.rootCountryView.setOnClickListener { listener.onClick(country) }
+    }
+
+    interface OnCLickListener {
+        fun onClick(country: Country)
     }
 }

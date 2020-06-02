@@ -7,6 +7,7 @@ import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Build
 import android.util.TypedValue
+import android.webkit.WebView
 import androidx.viewbinding.ViewBinding
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
@@ -76,4 +77,14 @@ private fun Context.getCountryFromPreferences(): Country? {
     val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
     val country = sharedPreferences.getString(COUNTRY, null)
     return country?.let { World.getCountryFrom(it) }
+}
+
+fun WebView.configure(url: String? = null): WebView = this.apply {
+    settings.javaScriptEnabled = true
+    settings.useWideViewPort = true
+    settings.loadWithOverviewMode = true
+    settings.javaScriptCanOpenWindowsAutomatically = true
+    settings.databaseEnabled = true
+    settings.domStorageEnabled = true
+    url?.let { loadUrl(it) }
 }

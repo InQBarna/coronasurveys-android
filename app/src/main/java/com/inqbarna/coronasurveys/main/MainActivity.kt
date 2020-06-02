@@ -9,13 +9,13 @@ import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var presenter: MainPresenter
+    private lateinit var presenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = MainPresenter(binding)
+        presenter = MainPresenter(binding, lifecycle)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

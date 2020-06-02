@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/fill_survey_block"
-        tools:context=".presentation.main.MainActivity">
+        tools:context="org.coronasurveys.mobile.presentation.main.MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main_container"
@@ -204,7 +204,7 @@
             android:text="@string/select_your_country_and_start"
             android:textSize="11sp" />
 
-        <com.coronasurveys.mobile.presentation.views.CountryView
+        <org.coronasurveys.mobile.presentation.views.CountryView
             android:id="@+id/country_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

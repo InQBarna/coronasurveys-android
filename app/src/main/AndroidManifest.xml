@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoronaSurveys">
+        <activity android:name=".CountryListActivity"></activity>
         <activity
             android:name=".preferences.SettingsActivity"
             android:label="@string/title_activity_settings" />

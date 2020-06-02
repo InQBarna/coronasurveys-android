@@ -30,7 +30,8 @@ class CountryView @JvmOverloads constructor (
     }
 
     private fun onClick() {
-        Log.d("TAG", "Open activity")
+        val intent = CountryListActivity.getCallingIntent(context)
+        context.startActivity(intent)
     }
 
 

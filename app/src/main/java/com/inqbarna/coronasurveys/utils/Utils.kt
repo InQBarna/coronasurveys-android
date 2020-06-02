@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Build
+import android.util.TypedValue
 import androidx.viewbinding.ViewBinding
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
@@ -17,6 +18,10 @@ import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.Reminde
 import java.util.*
 
 val ViewBinding.context: Context get() = root.context
+
+fun Int.toPx(context: Context): Int = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_DIP, this.toFloat(),
+    context.resources.displayMetrics).toInt()
 
 fun createAlarm(context: Context, freq: ReminderFrequency) {
     val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager

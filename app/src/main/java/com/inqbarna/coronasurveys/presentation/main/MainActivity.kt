@@ -1,13 +1,22 @@
 package com.inqbarna.coronasurveys.presentation.main
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.inqbarna.coronasurveys.R
 import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
+import com.inqbarna.coronasurveys.presentation.survey.WebViewActivity
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        fun getCallingIntent(ctx : Context) : Intent {
+            return Intent(ctx, MainActivity::class.java)
+        }
+    }
 
     private lateinit var presenter: MainPresenter
 

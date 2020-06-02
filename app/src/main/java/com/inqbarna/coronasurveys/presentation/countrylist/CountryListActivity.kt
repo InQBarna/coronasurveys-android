@@ -15,19 +15,14 @@ class CountryListActivity : AppCompatActivity() {
         }
     }
 
-    private val adapter =
-        BasicAdapter()
-    lateinit var presenter: CountryListPresenter
+    private val adapter = BasicAdapter()
+    private lateinit var presenter: CountryListPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val binding = ActivityCountryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter =
-            CountryListPresenter(
-                this,
-                binding,
-                adapter
-            )
+        presenter = CountryListPresenter(this, binding, adapter)
     }
 }

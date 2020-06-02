@@ -27,6 +27,7 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         preferencesRepo = PreferencesRepo(this)
         val binding = ActivityWebviewBinding.inflate(layoutInflater)
         myWebView = setupWebView(binding.surveyWebview, binding)

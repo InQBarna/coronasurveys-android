@@ -13,9 +13,8 @@ class CustomWebViewClient (private val binding: ActivityWebviewBinding): WebView
         return true
     }
 
-    override fun onPageFinished(view: WebView?, url: String?) {
+    override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
-        Toast.makeText(view!!.context, url, Toast.LENGTH_SHORT).show()
         binding.surveyLoading.visibility = View.GONE
     }
 }

@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">CoronaSurveys</string>
-    <string name="explanation_project">The world is suffering from a pandemic called COVID-19, caused by the SARS-CoV-2 virus. The different national governments have problems evaluating the reach of the epidemic, having limited resources and tests to their disposal. Hence, any means to evaluate the number of persons with symptoms compatible with COVID-19 with reasonable level of accuracy is useful. \n \nThe objective of this study is the collection and publication of data concerning the number of people that show symptoms compatible with COVID-19 in different countries. This data is useful to estimate the number of infected persons with the COVID-19 virus at a given point in time in these countries, and the evolution of this number over time, using techniques like the Network Scale-up Method.</string>
+    <string name="about_project_text">The world is suffering from a pandemic called COVID-19, caused by the SARS-CoV-2 virus. The different national governments have problems evaluating the reach of the epidemic, having limited resources and tests to their disposal. Hence, any means to evaluate the number of persons with symptoms compatible with COVID-19 with reasonable level of accuracy is useful.\n\nThe objective of this study is the collection and publication of data concerning the number of people that show symptoms compatible with COVID-19 in different countries. Hopefully, this data will be useful to estimate the number of infected persons with the COVID-19 virus at a given point in time in these countries, and the evolution of this number over time.</string>
     <string name="presentation">The CoronaSurveys project is a collaborative endeavour from several universities and research institutions (team members) Data about COVID-19 cases is collected via anonymous open surveys (all the data collected is openly available). The results below present estimations on the incidence and evolution of COVID-19 obtained from this data using the Network Scale-up Method. You can help by regularly completing the anonymous survey.</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

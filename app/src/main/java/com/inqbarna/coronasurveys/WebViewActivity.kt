@@ -20,10 +20,11 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         myWebView = setupWebView()
         setContentView(myWebView)
-        myWebView.loadUrl("https://survey.coronasurveys.org/?r=survey%2Findex&sid=10&newtest=Y&lang=ca&Country=AD")
+        myWebView.loadUrl(BuildConfig.SURVEY_URL)
     }
 
     private fun setupWebView(): WebView {
+        WebView.setWebContentsDebuggingEnabled(true)
         return WebView(this).apply {
             settings.javaScriptEnabled = true
             settings.useWideViewPort = true

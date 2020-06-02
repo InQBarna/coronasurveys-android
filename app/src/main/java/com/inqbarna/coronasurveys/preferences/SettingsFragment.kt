@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
 import com.inqbarna.coronasurveys.R
-import com.inqbarna.coronasurveys.Utils
+import com.inqbarna.coronasurveys.utils.createAlarm
 
 class SettingsFragment : PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener {
@@ -28,7 +28,7 @@ class SettingsFragment : PreferenceFragmentCompat(),
         if (key == REMINDER_PREF) {
             val newValue = sharedPreferences.getString(REMINDER_PREF, null)
             val freq = ReminderFrequency.valueOf(newValue!!)
-            Utils.createAlarm(requireContext(), freq)
+            createAlarm(requireContext(), freq)
         }
     }
 

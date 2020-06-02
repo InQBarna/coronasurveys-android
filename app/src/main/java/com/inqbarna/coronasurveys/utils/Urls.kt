@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys
+package com.inqbarna.coronasurveys.utils
 
 const val CONTACT_EMAIL = "coronasurveys@gmail.com"
 const val INSTAGRAM = "https://www.instagram.com/coronasurveys"

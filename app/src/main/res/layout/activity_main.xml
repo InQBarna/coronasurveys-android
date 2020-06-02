@@ -1,163 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingVertical="16dp">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fill_survey_block"
+        tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/title2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="CoronaSurveys Project Summary"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/presentation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="4dp"
-            android:text="@string/presentation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title2" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/team_button"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="16dp"
-            android:text="Team"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/presentation" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/data_button"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="8dp"
-            android:text="All collected data"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/team_button" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="About the project"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/data_button" />
-
-        <TextView
-            android:id="@+id/main_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="4dp"
-            android:text="@string/about_project_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title" />
-
-        <WebView
-            android:id="@+id/plot"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_container"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:nestedScrollingEnabled="true"
-            app:layout_constraintTop_toBottomOf="@id/main_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_height="match_parent"
+            android:paddingVertical="16dp">
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="CoronaSurveys Project Summary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/presentation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/presentation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/team_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Team"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/presentation" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/data_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="8dp"
+                android:text="All collected data"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/team_button" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="About the project"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/data_button" />
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/about_project_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <WebView
+                android:id="@+id/plot"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_text" />
+
+            <TextView
+                android:id="@+id/follow_us"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Follow Us!"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plot" />
+
+            <TextView
+                android:id="@+id/can_follow_us"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:text="You can also follow us on social networks and share our work:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/follow_us" />
+
+            <ImageView
+                android:id="@+id/facebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/purple_200"
+                app:layout_constraintEnd_toStartOf="@id/twitter"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/can_follow_us" />
+
+            <ImageView
+                android:id="@+id/twitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:background="@color/purple_500"
+                app:layout_constraintEnd_toStartOf="@id/instagram"
+                app:layout_constraintStart_toEndOf="@id/facebook"
+                app:layout_constraintTop_toTopOf="@id/facebook" />
+
+            <ImageView
+                android:id="@+id/instagram"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:background="@color/purple_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/twitter"
+                app:layout_constraintTop_toTopOf="@id/facebook" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/email_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email us"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="@id/can_follow_us"
+                app:layout_constraintStart_toStartOf="@id/can_follow_us"
+                app:layout_constraintTop_toBottomOf="@id/facebook" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/fill_survey_block"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
 
         <TextView
-            android:id="@+id/follow_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Follow Us!"
-            android:textColor="@color/purple_500"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/can_follow_us"
-            app:layout_constraintStart_toStartOf="@id/can_follow_us"
-            app:layout_constraintTop_toBottomOf="@id/plot" />
+            android:text="Contribute and fill the anonymous survey for a country"
+            android:textSize="11sp" />
 
-        <TextView
-            android:id="@+id/can_follow_us"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:text="You can also follow us on social networks and share our work:"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/follow_us" />
-
-        <ImageView
-            android:id="@+id/facebook"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/purple_200"
-            app:layout_constraintEnd_toStartOf="@id/twitter"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/can_follow_us" />
-
-        <ImageView
-            android:id="@+id/twitter"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:background="@color/purple_500"
-            app:layout_constraintEnd_toStartOf="@id/instagram"
-            app:layout_constraintStart_toEndOf="@id/facebook"
-            app:layout_constraintTop_toTopOf="@id/facebook" />
-
-        <ImageView
-            android:id="@+id/instagram"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:background="@color/purple_700"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/twitter"
-            app:layout_constraintTop_toTopOf="@id/facebook" />
+        <com.inqbarna.coronasurveys.CountryView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/email_button"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Email us"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="@id/can_follow_us"
-            app:layout_constraintStart_toStartOf="@id/can_follow_us"
-            app:layout_constraintTop_toBottomOf="@id/facebook" />
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Fill the survey" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>
+

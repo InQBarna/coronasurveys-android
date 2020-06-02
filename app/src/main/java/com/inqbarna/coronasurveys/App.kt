@@ -5,6 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import com.blongho.country_data.World
+import com.inqbarna.coronasurveys.utils.CHANNEL_ID
 
 class App: Application() {
 

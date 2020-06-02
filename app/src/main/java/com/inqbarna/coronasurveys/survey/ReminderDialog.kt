@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys
+package com.inqbarna.coronasurveys.survey
 
 import android.app.Dialog
 import android.content.Context.MODE_PRIVATE
@@ -6,9 +6,11 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import com.inqbarna.coronasurveys.R
 import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.PREFERENCES
 import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.REMINDER_PREF
 import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.ReminderFrequency
+import com.inqbarna.coronasurveys.utils.createAlarm
 
 class ReminderDialog: DialogFragment() {
 
@@ -36,7 +38,8 @@ class ReminderDialog: DialogFragment() {
         sharedPreferences.edit()
             .putString(REMINDER_PREF, frequency.toString())
             .apply()
-        Utils.createAlarm(requireContext(), frequency)
+        createAlarm(requireContext(), frequency)
     }
+
 
 }

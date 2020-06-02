@@ -5,11 +5,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.inqbarna.coronasurveys.utils.CHANNEL_ID
 
 class ReminderBroadcast: BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        val builder: NotificationCompat.Builder = NotificationCompat.Builder(context, CHANNEL_ID)
+        val builder: NotificationCompat.Builder = NotificationCompat.Builder(context,
+            CHANNEL_ID
+        )
             .setSmallIcon(R.drawable.ic_baseline_settings_24)
             .setContentTitle("Reminder survey")
             .setContentText("Please fill the survey")

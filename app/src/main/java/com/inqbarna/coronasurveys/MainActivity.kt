@@ -2,6 +2,7 @@ package com.inqbarna.coronasurveys
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
 import com.inqbarna.coronasurveys.preferences.SettingsActivity
 import com.inqbarna.coronasurveys.survey.WebViewActivity
-
+import com.inqbarna.coronasurveys.utils.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,10 +32,9 @@ class MainActivity : AppCompatActivity() {
             loadUrl(PLOT_URL)
         }
         binding.teamButton.setOnClickListener {
-            goToSurvey()
-            //val i = Intent(Intent.ACTION_VIEW)
-            //i.data = Uri.parse(TEAM_URL)
-            //startActivity(i)
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(TEAM_URL)
+            startActivity(i)
         }
 
         binding.dataButton.setOnClickListener {

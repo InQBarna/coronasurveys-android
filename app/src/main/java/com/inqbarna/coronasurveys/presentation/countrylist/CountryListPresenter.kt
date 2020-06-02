@@ -21,7 +21,7 @@ class CountryListPresenter(
     }
 
     private fun setupList() {
-        RecyclerUtils.setAdapter(binding.contryListRecycler, adapter)
+        RecyclerUtils.setAdapter(binding.contryListRecycler, adapter, itemMargin = 8)
         adapter.update(
             World.getAllCountries()
             .sortedBy { it.name }

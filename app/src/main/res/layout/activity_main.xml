@@ -177,7 +177,7 @@
     <LinearLayout
         android:id="@+id/fill_survey_block"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         android:background="@color/white"
@@ -195,13 +195,14 @@
         <com.inqbarna.coronasurveys.presentation.views.CountryView
             android:id="@+id/country_view"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginTop="8dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:layout_height="60dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fill_survey_button"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:text="Fill the survey" />

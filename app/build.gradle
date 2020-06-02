@@ -54,10 +54,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.1'
     implementation "com.xwray:groupie:2.8.0"
     implementation "com.xwray:groupie-databinding:2.8.0"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha03'
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha03"
     implementation "androidx.lifecycle:lifecycle-process:2.3.0-alpha03"
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha03'
     implementation "androidx.lifecycle:lifecycle-common-java8:2.3.0-alpha03"
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

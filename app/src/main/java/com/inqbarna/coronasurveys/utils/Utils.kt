@@ -48,7 +48,7 @@ fun createAlarm(context: Context, freq: ReminderFrequency) {
 
 private fun AlarmManager.setupAlarm(freq: ReminderFrequency, pendingIntent: PendingIntent) {
     val calendar: Calendar = Calendar.getInstance().apply {
-        timeInMillis = System.currentTimeMillis()
+        add(Calendar.DATE, if (freq == DAILY) 1 else 7)
     }
 
     setInexactRepeating(

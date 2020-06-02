@@ -21,8 +21,7 @@ class ReminderDialog: DialogFragment(), DialogInterface.OnClickListener {
     private lateinit var preferencesRepo: PreferencesRepo
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        preferencesRepo =
-            PreferencesRepo(requireContext())
+        preferencesRepo = PreferencesRepo(requireContext())
         return AlertDialog.Builder(requireContext())
             .setTitle(requireContext().getString(R.string.add_reminder_title))
             .setMessage(requireContext().getString(R.string.add_reminder_text))

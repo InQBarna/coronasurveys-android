@@ -10,6 +10,7 @@ class SettingsFragment : PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        preferenceManager.sharedPreferencesName = PREFERENCES
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
     }
 
@@ -32,6 +33,7 @@ class SettingsFragment : PreferenceFragmentCompat(),
     }
 
     companion object {
+        const val PREFERENCES = "PREFERENCES"
         const val REMINDER_PREF = "prefReminder"
         enum class ReminderFrequency {
             OFF, DAILY, WEEKLY

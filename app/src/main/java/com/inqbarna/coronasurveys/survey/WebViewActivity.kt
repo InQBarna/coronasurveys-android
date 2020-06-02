@@ -1,10 +1,14 @@
-package com.inqbarna.coronasurveys
+package com.inqbarna.coronasurveys.survey
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.webkit.JavascriptInterface
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
+import com.inqbarna.coronasurveys.BuildConfig
+import com.inqbarna.coronasurveys.ReminderDialog
 
 class WebViewActivity : AppCompatActivity() {
 
@@ -14,6 +18,7 @@ class WebViewActivity : AppCompatActivity() {
         fun getCallingIntent(ctx : Context) : Intent {
             return Intent(ctx, WebViewActivity::class.java)
         }
+        const val HANDLER = "handler"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,12 +31,23 @@ class WebViewActivity : AppCompatActivity() {
     private fun setupWebView(): WebView {
         WebView.setWebContentsDebuggingEnabled(true)
         return WebView(this).apply {
+            webViewClient = CustomWebViewClient()
+            addJavascriptInterface(JavaScriptInterface(), HANDLER)
             settings.javaScriptEnabled = true
             settings.useWideViewPort = true
             settings.loadWithOverviewMode = true
             settings.javaScriptCanOpenWindowsAutomatically = true
             settings.databaseEnabled = true
             settings.domStorageEnabled = true
+        }
+    }
+
+
+    private inner class JavaScriptInterface {
+        @JavascriptInterface
+        fun callback() {
+            val dialog = ReminderDialog()
+            dialog.show(supportFragmentManager, ReminderDialog.TAG)
         }
     }
 

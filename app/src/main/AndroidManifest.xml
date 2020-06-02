@@ -16,7 +16,7 @@
             android:name=".preferences.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".WebViewActivity"
+            android:name=".survey.WebViewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity android:name=".MainActivity">
             <intent-filter>

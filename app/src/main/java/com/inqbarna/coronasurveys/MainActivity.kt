@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
 import com.inqbarna.coronasurveys.preferences.SettingsActivity
+import com.inqbarna.coronasurveys.survey.WebViewActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,9 +31,10 @@ class MainActivity : AppCompatActivity() {
             loadUrl(PLOT_URL)
         }
         binding.teamButton.setOnClickListener {
-            val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(TEAM_URL)
-            startActivity(i)
+            goToSurvey()
+            //val i = Intent(Intent.ACTION_VIEW)
+            //i.data = Uri.parse(TEAM_URL)
+            //startActivity(i)
         }
 
         binding.dataButton.setOnClickListener {
@@ -66,6 +68,11 @@ class MainActivity : AppCompatActivity() {
             R.id.action_favorite -> goToSettings()
         }
         return true
+    }
+
+    private fun goToSurvey() {
+        val intent = WebViewActivity.getCallingIntent(this)
+        startActivity(intent)
     }
 
     private fun goToSettings() {

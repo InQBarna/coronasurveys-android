@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
-import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
 import com.inqbarna.coronasurveys.databinding.ActivityWebviewBinding
 import com.inqbarna.coronasurveys.utils.SurveyUtils
 import com.inqbarna.coronasurveys.utils.configure

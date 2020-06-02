@@ -1,21 +1,20 @@
 package com.inqbarna.coronasurveys.presentation.countrylist
 
-import android.content.Context
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
 import com.inqbarna.coronasurveys.databinding.ActivityCountryListBinding
-import com.inqbarna.coronasurveys.preferences.SettingsFragment
 import com.inqbarna.coronasurveys.presentation.adapters.BasicAdapter
-import com.inqbarna.coronasurveys.utils.RecyclerUtils
 import com.inqbarna.coronasurveys.presentation.items.CountryItem
-import com.inqbarna.coronasurveys.utils.context
+import com.inqbarna.coronasurveys.data.PreferencesRepo
+import com.inqbarna.coronasurveys.utils.RecyclerUtils
 
 class CountryListPresenter(
     private val activity: CountryListActivity,
     private val binding: ActivityCountryListBinding,
     private val adapter: BasicAdapter
-)
-    : CountryItem.OnCLickListener {
+) : CountryItem.OnCLickListener {
+
+    private val preferencesRepo = PreferencesRepo(activity)
 
     init {
         setupList()
@@ -30,11 +29,7 @@ class CountryListPresenter(
     }
 
     override fun onClick(country: Country) {
-        val sharedPreferences
-                = binding.context.getSharedPreferences(SettingsFragment.PREFERENCES, Context.MODE_PRIVATE)
-        sharedPreferences.edit()
-            .putString(SettingsFragment.COUNTRY, country.alpha2)
-            .apply()
+        preferencesRepo.saveCountry(country)
         activity.finish()
     }
 }

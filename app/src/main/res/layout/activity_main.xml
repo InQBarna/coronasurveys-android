@@ -163,7 +163,7 @@
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:text="Email us"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="@id/can_follow_us"

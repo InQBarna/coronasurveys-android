@@ -1,15 +1,13 @@
 package com.inqbarna.coronasurveys.presentation.survey
 
 import android.app.Dialog
-import android.content.Context.MODE_PRIVATE
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.inqbarna.coronasurveys.R
-import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.PREFERENCES
-import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.REMINDER_PREF
 import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.ReminderFrequency
+import com.inqbarna.coronasurveys.data.PreferencesRepo
 import com.inqbarna.coronasurveys.utils.createAlarm
 
 class ReminderDialog: DialogFragment() {
@@ -18,7 +16,11 @@ class ReminderDialog: DialogFragment() {
         const val TAG = "ReminderDialog"
     }
 
+    lateinit var preferencesRepo: PreferencesRepo
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        preferencesRepo =
+            PreferencesRepo(requireContext())
         val choices = requireContext().resources.getStringArray(R.array.reminder_entries)
         return AlertDialog.Builder(requireContext())
             .setTitle("Quieres que te recordemos el survey?")
@@ -34,10 +36,7 @@ class ReminderDialog: DialogFragment() {
     }
 
     private fun savePreferences(frequency: ReminderFrequency) {
-        val sharedPreferences = requireContext().getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-        sharedPreferences.edit()
-            .putString(REMINDER_PREF, frequency.toString())
-            .apply()
+        preferencesRepo.saveReminderFreq(frequency)
         createAlarm(requireContext(), frequency)
     }
 

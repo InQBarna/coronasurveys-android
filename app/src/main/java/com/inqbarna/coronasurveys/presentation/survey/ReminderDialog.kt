@@ -2,15 +2,17 @@ package com.inqbarna.coronasurveys.presentation.survey
 
 import android.app.Dialog
 import android.content.DialogInterface
+import android.content.DialogInterface.BUTTON_NEGATIVE
+import android.content.DialogInterface.BUTTON_POSITIVE
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.inqbarna.coronasurveys.R
-import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.ReminderFrequency
 import com.inqbarna.coronasurveys.data.PreferencesRepo
+import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.ReminderFrequency
 import com.inqbarna.coronasurveys.utils.createAlarm
 
-class ReminderDialog: DialogFragment() {
+class ReminderDialog: DialogFragment(), DialogInterface.OnClickListener {
 
     companion object {
         const val TAG = "ReminderDialog"
@@ -21,24 +23,28 @@ class ReminderDialog: DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         preferencesRepo =
             PreferencesRepo(requireContext())
-        val choices = requireContext().resources.getStringArray(R.array.reminder_entries)
         return AlertDialog.Builder(requireContext())
-            .setTitle(requireContext().getString(R.string.add_reminder_text))
-            .setSingleChoiceItems(choices, - 1, ::onSelection)
+            .setTitle(requireContext().getString(R.string.add_reminder_title))
+            .setMessage(requireContext().getString(R.string.add_reminder_text))
+            .setPositiveButton(requireContext().getString(R.string.daily_reminder), this)
+            .setNegativeButton(requireContext().getString(R.string.weekly_reminder), this)
+            .setNeutralButton(requireContext().getString(R.string.reminder_disabled), this)
             .create()
     }
 
-    private fun onSelection(dialogInterface: DialogInterface, index: Int) {
-        val selection = requireContext().resources.getStringArray(R.array.reminder_values)[index]
-        val freq = ReminderFrequency.valueOf(selection)
+    override fun onClick(dialog: DialogInterface, which: Int) {
+        val freq = when (which) {
+            BUTTON_POSITIVE -> ReminderFrequency.DAILY
+            BUTTON_NEGATIVE ->ReminderFrequency.WEEKLY
+            else -> ReminderFrequency.OFF
+        }
         savePreferences(freq)
-        dialogInterface.dismiss()
+        dialog.dismiss()
+        activity?.finish()
     }
 
     private fun savePreferences(frequency: ReminderFrequency) {
         preferencesRepo.saveReminderFreq(frequency)
         createAlarm(requireContext(), frequency)
     }
-
-
 }

@@ -12,10 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoronaSurveys">
-        <activity android:name=".presentation.countrylist.CountryListActivity"></activity>
+        <activity android:name=".presentation.countrylist.CountryListActivity" />
         <activity
             android:name=".preferences.SettingsActivity"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/settings" />
         <activity
             android:name="com.inqbarna.coronasurveys.presentation.survey.WebViewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />

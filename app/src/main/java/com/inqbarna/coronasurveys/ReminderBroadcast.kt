@@ -17,8 +17,8 @@ class ReminderBroadcast: BroadcastReceiver() {
 
         val builder: NotificationCompat.Builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.mipmap.ic_launcher_round)
-            .setContentTitle("Reminder survey")
-            .setContentText("Please fill the survey")
+            .setContentTitle(context.getString(R.string.reminder_notification_title))
+            .setContentText(context.getString(R.string.reminder_notification_body))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
 

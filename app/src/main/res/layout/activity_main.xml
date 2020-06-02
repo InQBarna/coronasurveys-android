@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:text="CoronaSurveys Project Summary"
+                android:text="@string/project_summary_title"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/presentation"
+                android:text="@string/project_summary_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title2" />
@@ -47,8 +47,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="32dp"
-                android:layout_marginTop="16dp"
-                android:text="Team"
+                android:layout_marginTop="8dp"
+                android:text="@string/team"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="32dp"
                 android:layout_marginTop="8dp"
-                android:text="All collected data"
+                android:text="@string/all_collected_data"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:text="About the project"
+                android:text="@string/about_project_title"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +90,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title" />
 
+            <TextView
+                android:id="@+id/plot_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/percentage_population_symptoms"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_text" />
+
             <WebView
                 android:id="@+id/plot"
                 android:layout_width="match_parent"
@@ -99,7 +111,7 @@
                 android:nestedScrollingEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/main_text" />
+                app:layout_constraintTop_toBottomOf="@id/plot_title" />
 
             <TextView
                 android:id="@+id/follow_us"
@@ -107,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="40dp"
-                android:text="Follow Us!"
+                android:text="@string/follow_us_title"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
-                android:text="You can also follow us on social networks and share our work:"
+                android:text="@string/follow_us_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/follow_us" />
@@ -164,7 +176,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Email us"
+                android:text="@string/email_us"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="@id/can_follow_us"
                 app:layout_constraintStart_toStartOf="@id/can_follow_us"
@@ -189,7 +201,7 @@
             android:id="@+id/survey_block_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contribute and fill the anonymous survey for a country"
+            android:text="@string/select_your_country_and_start"
             android:textSize="11sp" />
 
         <com.inqbarna.coronasurveys.presentation.views.CountryView
@@ -205,7 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
-            android:text="Fill the survey" />
+            android:text="@string/fill_survey" />
 
     </LinearLayout>
 

@@ -1,21 +1,37 @@
 <resources>
     <string name="app_name">CoronaSurveys</string>
     <string name="about_project_text">The world is suffering from a pandemic called COVID-19, caused by the SARS-CoV-2 virus. The different national governments have problems evaluating the reach of the epidemic, having limited resources and tests to their disposal. Hence, any means to evaluate the number of persons with symptoms compatible with COVID-19 with reasonable level of accuracy is useful.\n\nThe objective of this study is the collection and publication of data concerning the number of people that show symptoms compatible with COVID-19 in different countries. Hopefully, this data will be useful to estimate the number of infected persons with the COVID-19 virus at a given point in time in these countries, and the evolution of this number over time.</string>
-    <string name="presentation">The CoronaSurveys project is a collaborative endeavour from several universities and research institutions (team members) Data about COVID-19 cases is collected via anonymous open surveys (all the data collected is openly available). The results below present estimations on the incidence and evolution of COVID-19 obtained from this data using the Network Scale-up Method. You can help by regularly completing the anonymous survey.</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="about_project_title">About the project</string>
+    <string name="add_reminder_text">Add a reminder so it is easier for you to fill in the survey regularly and make a better contribution to the project.</string>
+    <string name="add_reminder_title">Add reminder</string>
+    <string name="all_collected_data">All collected data</string>
+    <string name="cancel">Cancel</string>
+    <string name="coronasurveys">CoronaSurveys</string>
+    <string name="daily_reminder">Daily reminder</string>
+    <string name="email_us">Email</string>
+    <string name="enable_notifications_alert_text">Enable notifications to schedule reminders</string>
+    <string name="enable_notifications_alert_title">Notifications not enabled</string>
+    <string name="fill_survey">Fill the survey</string>
+    <string name="follow_us_text">You can also follow us on social networks and share our work:</string>
+    <string name="follow_us_title">Follow us!</string>
+    <string name="gmail_app">Gmail</string>
+    <string name="go_to_settings">Go to settings</string>
+    <string name="mail_app">Mail</string>
+    <string name="no_mail_apps_available">No mail apps available</string>
+    <string name="no_thanks">No, thanks</string>
+    <string name="outlook_app">Outlook</string>
+    <string name="percentage_population_symptoms">Percentage of population with symptoms estimated by @CoronaSurveys</string>
+    <string name="project_summary_text">The CoronaSurveys project is a collaborative endeavour from several universities and research institutions (team members) Data about COVID-19 cases is collected via anonymous open surveys (all the data collected is openly available). The results below present estimations on the incidence of COVID-19 from this and other available data. You can help by regularly completing the anonymous survey.\n</string>
+    <string name="project_summary_title">CoronaSurveys Project Summary</string>
+    <string name="reminder_enabled">Reminder enabled</string>
+    <string name="reminder_notification_body">Fill the anonymous survey for a country</string>
+    <string name="reminder_notification_title">Contribute</string>
+    <string name="select_country">Select country</string>
+    <string name="select_mail_app">Select mail app</string>
+    <string name="select_your_country_and_start">Contribute and fill the anonymous survey for a country:</string>
+    <string name="send_mail_subject">I would like to have more information about the project</string>
+    <string name="settings">Settings</string>
+    <string name="survey">Survey</string>
+    <string name="team">Team</string>
+    <string name="weekly_reminder">Weekly reminder</string>
 </resources>

@@ -16,14 +16,14 @@ class ReminderDialog: DialogFragment() {
         const val TAG = "ReminderDialog"
     }
 
-    lateinit var preferencesRepo: PreferencesRepo
+    private lateinit var preferencesRepo: PreferencesRepo
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         preferencesRepo =
             PreferencesRepo(requireContext())
         val choices = requireContext().resources.getStringArray(R.array.reminder_entries)
         return AlertDialog.Builder(requireContext())
-            .setTitle("Quieres que te recordemos el survey?")
+            .setTitle(requireContext().getString(R.string.add_reminder_text))
             .setSingleChoiceItems(choices, - 1, ::onSelection)
             .create()
     }

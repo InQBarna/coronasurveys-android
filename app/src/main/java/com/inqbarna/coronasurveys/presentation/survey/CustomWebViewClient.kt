@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.survey
+package com.inqbarna.coronasurveys.presentation.survey
 
 import android.webkit.WebView
 import android.webkit.WebViewClient

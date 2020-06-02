@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.main
+package com.inqbarna.coronasurveys.presentation.main
 
 import android.os.Bundle
 import android.view.Menu

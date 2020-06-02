@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.presentation
+package com.inqbarna.coronasurveys.presentation.adapters
 
 import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter

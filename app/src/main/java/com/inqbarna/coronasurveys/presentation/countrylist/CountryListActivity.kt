@@ -1,16 +1,11 @@
-package com.inqbarna.coronasurveys
+package com.inqbarna.coronasurveys.presentation.countrylist
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.blongho.country_data.World
 import com.inqbarna.coronasurveys.databinding.ActivityCountryListBinding
-import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
-import com.inqbarna.coronasurveys.presentation.BasicAdapter
-import com.inqbarna.coronasurveys.presentation.RecyclerUtils
-import com.inqbarna.coronasurveys.presentation.items.CountryItem
-import com.inqbarna.coronasurveys.survey.WebViewActivity
+import com.inqbarna.coronasurveys.presentation.adapters.BasicAdapter
 
 class CountryListActivity : AppCompatActivity() {
 
@@ -20,13 +15,19 @@ class CountryListActivity : AppCompatActivity() {
         }
     }
 
-    private val adapter = BasicAdapter()
+    private val adapter =
+        BasicAdapter()
     lateinit var presenter: CountryListPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityCountryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = CountryListPresenter(this, binding, adapter)
+        presenter =
+            CountryListPresenter(
+                this,
+                binding,
+                adapter
+            )
     }
 }

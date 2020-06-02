@@ -1,11 +1,11 @@
-package com.inqbarna.coronasurveys.main
+package com.inqbarna.coronasurveys.presentation.main
 
 import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.Lifecycle
 import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
 import com.inqbarna.coronasurveys.preferences.SettingsActivity
-import com.inqbarna.coronasurveys.survey.WebViewActivity
+import com.inqbarna.coronasurveys.presentation.survey.WebViewActivity
 import com.inqbarna.coronasurveys.utils.*
 
 class MainPresenter (

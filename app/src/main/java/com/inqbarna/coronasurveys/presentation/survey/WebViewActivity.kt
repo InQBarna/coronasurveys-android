@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.survey
+package com.inqbarna.coronasurveys.presentation.survey
 
 import android.content.Context
 import android.content.Intent
@@ -43,9 +43,13 @@ class WebViewActivity : AppCompatActivity() {
     private inner class JavaScriptInterface {
         @JavascriptInterface
         fun callback() {
-            val dialog = ReminderDialog()
-            dialog.show(supportFragmentManager, ReminderDialog.TAG)
+            showDialog()
         }
+    }
+
+    private fun showDialog() {
+        val dialog = ReminderDialog()
+        dialog.show(supportFragmentManager, ReminderDialog.TAG)
     }
 
 }

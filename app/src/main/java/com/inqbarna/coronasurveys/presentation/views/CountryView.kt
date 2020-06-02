@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys
+package com.inqbarna.coronasurveys.presentation.views
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,6 +7,7 @@ import android.widget.FrameLayout
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.inqbarna.coronasurveys.databinding.CountryViewBinding
+import com.inqbarna.coronasurveys.presentation.countrylist.CountryListActivity
 import com.inqbarna.coronasurveys.utils.getCountry
 
 class CountryView @JvmOverloads constructor (

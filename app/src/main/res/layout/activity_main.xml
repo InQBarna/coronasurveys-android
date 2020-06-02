@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/fill_survey_block"
-        tools:context=".main.MainActivity">
+        tools:context=".presentation.main.MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main_container"
@@ -189,7 +189,7 @@
             android:text="Contribute and fill the anonymous survey for a country"
             android:textSize="11sp" />
 
-        <com.inqbarna.coronasurveys.CountryView
+        <com.inqbarna.coronasurveys.presentation.views.CountryView
             android:id="@+id/country_view"
             android:layout_width="match_parent"
             android:layout_height="80dp"

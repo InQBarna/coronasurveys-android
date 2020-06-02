@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.survey
+package com.inqbarna.coronasurveys.presentation.survey
 
 import android.app.Dialog
 import android.content.Context.MODE_PRIVATE

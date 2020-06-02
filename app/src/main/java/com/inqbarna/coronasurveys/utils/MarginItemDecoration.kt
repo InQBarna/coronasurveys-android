@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.presentation
+package com.inqbarna.coronasurveys.utils
 
 import android.graphics.Rect
 import android.view.View

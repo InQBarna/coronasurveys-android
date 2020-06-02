@@ -1,4 +1,4 @@
-package com.inqbarna.coronasurveys.presentation
+package com.inqbarna.coronasurveys.utils
 
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +26,9 @@ object RecyclerUtils {
             setHasFixedSize(fixedSize)
             if (itemDecorationCount == 0) {
                 val dividerItemDecoration =
-                    MarginItemDecoration(itemMargin)
+                    MarginItemDecoration(
+                        itemMargin
+                    )
                 this.addItemDecoration(dividerItemDecoration)
             }
             this.layoutManager = layoutManager

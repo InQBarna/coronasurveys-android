@@ -34,6 +34,7 @@ class SettingsFragment : PreferenceFragmentCompat(),
 
     companion object {
         const val PREFERENCES = "PREFERENCES"
+        const val COUNTRY = "COUNTRY"
         const val REMINDER_PREF = "prefReminder"
         enum class ReminderFrequency {
             OFF, DAILY, WEEKLY

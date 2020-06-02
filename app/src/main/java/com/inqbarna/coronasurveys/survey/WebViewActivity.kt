@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
-import com.inqbarna.coronasurveys.BuildConfig
+import com.inqbarna.coronasurveys.utils.SurveyUtils
+import com.inqbarna.coronasurveys.utils.getCountry
+import com.inqbarna.coronasurveys.utils.getLanguage
 
 class WebViewActivity : AppCompatActivity() {
 
@@ -23,7 +25,7 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         myWebView = setupWebView()
         setContentView(myWebView)
-        myWebView.loadUrl(BuildConfig.SURVEY_URL)
+        myWebView.loadUrl(SurveyUtils.getSurveyUrl(getCountry(), getLanguage()))
     }
 
     private fun setupWebView(): WebView {

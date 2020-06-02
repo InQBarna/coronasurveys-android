@@ -3,14 +3,20 @@ package com.inqbarna.coronasurveys.utils
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Build
+import androidx.viewbinding.ViewBinding
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
 import com.inqbarna.coronasurveys.ReminderBroadcast
+import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.COUNTRY
+import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.PREFERENCES
 import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.ReminderFrequency
 import com.inqbarna.coronasurveys.preferences.SettingsFragment.Companion.ReminderFrequency.*
 import java.util.*
+
+val ViewBinding.context: Context get() = root.context
 
 fun createAlarm(context: Context, freq: ReminderFrequency) {
     val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
@@ -40,11 +46,29 @@ private fun AlarmManager.setupAlarm(freq: ReminderFrequency, pendingIntent: Pend
     )
 }
 
+fun Context.getLanguage(): String {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        resources.configuration.locales.get(0).language
+    } else {
+        resources.configuration.locale.language
+    }
+}
+
 fun Context.getCountry(): Country {
+    return getCountryFromPreferences() ?: getCountryFromLocale()
+}
+
+private fun Context.getCountryFromLocale(): Country {
     val country = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
         resources.configuration.locales.get(0).country
     } else {
         resources.configuration.locale.country
     }
     return World.getCountryFrom(country)
+}
+
+private fun Context.getCountryFromPreferences(): Country? {
+    val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+    val country = sharedPreferences.getString(COUNTRY, null)
+    return country?.let { World.getCountryFrom(it) }
 }

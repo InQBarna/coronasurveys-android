@@ -1,27 +1,19 @@
-package com.inqbarna.coronasurveys
+package com.inqbarna.coronasurveys.main
 
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import com.inqbarna.coronasurveys.databinding.ActivityMainBinding
 import com.inqbarna.coronasurveys.preferences.SettingsActivity
 import com.inqbarna.coronasurveys.survey.WebViewActivity
 import com.inqbarna.coronasurveys.utils.*
 
-class MainActivity : AppCompatActivity() {
+class MainPresenter(private val binding: ActivityMainBinding) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setUpListeners(binding)
+    init {
+        setUpListeners()
     }
 
-    private fun setUpListeners(binding: ActivityMainBinding) {
+    private fun setUpListeners() {
         binding.plot.apply {
             settings.javaScriptEnabled = true
             settings.useWideViewPort = true
@@ -34,17 +26,21 @@ class MainActivity : AppCompatActivity() {
         binding.teamButton.setOnClickListener {
             val i = Intent(Intent.ACTION_VIEW)
             i.data = Uri.parse(TEAM_URL)
-            startActivity(i)
+            binding.context.startActivity(i)
         }
 
         binding.dataButton.setOnClickListener {
             val i = Intent(Intent.ACTION_VIEW)
             i.data = Uri.parse(GITHUB)
-            startActivity(i)
+            binding.context.startActivity(i)
         }
 
         binding.emailButton.setOnClickListener {
             startEmail()
+        }
+
+        binding.fillSurveyButton.setOnClickListener {
+            goToSurvey()
         }
     }
 
@@ -53,30 +49,18 @@ class MainActivity : AppCompatActivity() {
             val mailto = "mailto:$CONTACT_EMAIL"
             data = Uri.parse(mailto)
         }
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
+        if (intent.resolveActivity(binding.context.packageManager) != null) {
+            binding.context.startActivity(intent)
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_favorite -> goToSettings()
-        }
-        return true
     }
 
     private fun goToSurvey() {
-        val intent = WebViewActivity.getCallingIntent(this)
-        startActivity(intent)
+        val intent = WebViewActivity.getCallingIntent(binding.context)
+        binding.context.startActivity(intent)
     }
 
-    private fun goToSettings() {
-        val intent = SettingsActivity.getCallingIntent(this)
-        startActivity(intent)
+    fun goToSettings() {
+        val intent = SettingsActivity.getCallingIntent(binding.context)
+        binding.context.startActivity(intent)
     }
 }

@@ -5,7 +5,21 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+ext.propFile = file('sign.properties')
+
 android {
+    if (propFile.exists()) {
+        Properties signProps = new Properties()
+        signProps.load(new FileInputStream(propFile))
+        signingConfigs {
+            release {
+                storeFile file(signProps.KEYSTORE)
+                storePassword signProps.STORE_PASS
+                keyAlias signProps.ALIAS
+                keyPassword signProps.KEY_PASS
+            }
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
@@ -17,7 +31,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.debug // GET RID OF THIS
     }
 
     buildTypes {
@@ -27,6 +40,7 @@ android {
         release {
             buildConfigField "String", "SURVEY_URL", '"https://mobile.coronasurveys.org/xx/yy"'
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

@@ -3,7 +3,7 @@
     <PreferenceCategory>
 
         <ListPreference
-            app:defaultValue="@string/reminder_disabled"
+            app:defaultValue="OFF"
             app:entries="@array/reminder_entries"
             app:entryValues="@array/reminder_values"
             app:key="prefReminder"

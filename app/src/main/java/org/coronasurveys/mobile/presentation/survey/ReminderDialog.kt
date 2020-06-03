@@ -28,7 +28,7 @@ class ReminderDialog: DialogFragment(), DialogInterface.OnClickListener {
             .setMessage(requireContext().getString(R.string.add_reminder_text))
             .setPositiveButton(requireContext().getString(R.string.daily_reminder), this)
             .setNegativeButton(requireContext().getString(R.string.weekly_reminder), this)
-            .setNeutralButton(requireContext().getString(R.string.reminder_disabled), this)
+            .setNeutralButton(requireContext().getString(R.string.no_thanks), this)
             .create()
     }
 

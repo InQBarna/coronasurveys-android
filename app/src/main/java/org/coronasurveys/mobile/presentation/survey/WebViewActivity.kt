@@ -2,10 +2,13 @@ package org.coronasurveys.mobile.presentation.survey
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
+import org.coronasurveys.mobile.R
 import org.coronasurveys.mobile.data.PreferencesRepo
 import org.coronasurveys.mobile.databinding.ActivityWebviewBinding
 import org.coronasurveys.mobile.utils.SurveyUtils
@@ -27,12 +30,19 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         preferencesRepo = PreferencesRepo(this)
+        setupActionBar()
         val binding = ActivityWebviewBinding.inflate(layoutInflater)
         myWebView = setupWebView(binding.surveyWebview, binding)
         setContentView(binding.root)
         myWebView.loadUrl(SurveyUtils.getSurveyUrl(getCountry(), getLanguage()))
+    }
+
+    private fun setupActionBar() {
+        supportActionBar?.title = getString(R.string.survey)
+        supportActionBar?.elevation = 4f
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     private fun setupWebView(webView: WebView, binding: ActivityWebviewBinding): WebView {

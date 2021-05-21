@@ -3,6 +3,7 @@ package org.coronasurveys.mobile.presentation.main
 import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.Lifecycle
+import coil.load
 import org.coronasurveys.mobile.databinding.ActivityMainBinding
 import org.coronasurveys.mobile.preferences.SettingsActivity
 import org.coronasurveys.mobile.presentation.survey.WebViewActivity
@@ -19,7 +20,7 @@ class MainPresenter (
 
     private fun setUpListeners() {
         lifecycle.addObserver(binding.countryView)
-        binding.plot.configure(PLOT_URL)
+        binding.plot.load(imageUrl(binding.context))
 
         binding.emailButton.setOnClickListener { startEmail() }
         binding.fillSurveyButton.setOnClickListener { goToSurvey() }
